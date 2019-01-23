@@ -9,9 +9,10 @@ int *weight;
 
 int chosenObj()
 {
-    int x = maxWeight;
-    int i=n;
-    for(int j=0; j<=8; j++)
+    int x = ary[n][maxWeight];
+    //int i=n;
+    //for(int j=0; j<=8; j++)
+    for(int i=n; i>=0; i--)
     {
         if(ary[i-1][i]== x)
         {
@@ -23,7 +24,7 @@ int chosenObj()
             cout << "serial no of taken piece: " << i << endl;
             x = x-value[i];
         }
-        i--;
+        //i--;
         if(x==0) break;
     }
 
@@ -98,6 +99,7 @@ int main(void)
         ary[i] = new int[maxWeight+1];
     }
 
+    // ********constructing 2D array *****
     for(int row=0; row<=n; row++)
     {
         for(int w=0; w<=maxWeight; w++)
@@ -109,7 +111,7 @@ int main(void)
             else ary[row][w] = ary[row-1][w];
         }
     }
-    cout << "maximum weight: " << ary[n][maxWeight] << endl;
+    cout << "maximum Profit: " << ary[n][maxWeight] << endl;
 
     for(int row=0; row<=n; row++)
     {

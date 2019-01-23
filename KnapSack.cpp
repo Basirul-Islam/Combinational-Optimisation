@@ -7,9 +7,28 @@ int *value;
 int **ary;
 int *weight;
 
-int choosenObj()
+int chosenObj()
 {
+    int x = maxWeight;
+    int i=n;
+    for(int j=0; j<=8; j++)
+    {
+        if(ary[i-1][i]== x)
+        {
+            cout << "serial no of taken piece: " << i-1 << endl;
+            x = x-value[i-1];
+        }
+        else
+        {
+            cout << "serial no of taken piece: " << i << endl;
+            x = x-value[i];
+        }
+        i--;
+        if(x==0) break;
+    }
 
+
+    /*
    int i = n;
    int j = maxWeight;
 
@@ -17,6 +36,9 @@ int choosenObj()
 
    while(i>0&&j>0)
    {
+
+
+
        if(ary[i][j]==ary[i-1][j])
        {
            //cout << "i = " << 0 << endl;
@@ -99,8 +121,7 @@ int main(void)
     }
 
 
-     choosenObj();
+     chosenObj();
 
     return 0;
 }
-

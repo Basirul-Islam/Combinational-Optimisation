@@ -32,10 +32,24 @@ int count( int S[], int m, int n )
 // Driver program to test above function
 int main(void)
 {
-    int i, j;
-    int arr[] = {2, 3};
-    int m = sizeof(arr)/sizeof(arr[0]);
-    cout << "total way: " << count(arr, m, 5) ;
+    //int i, j;
+    int *arr;
+    cout << "Coin NO: ";
+    int coinNo;
+
+    cin >> coinNo;
+    arr = new int [coinNo];
+    int amount;
+    cout << "targeted amount: ";
+    cin >> amount;
+    cout << "enter the values: ";
+    for(int i = 0;i<coinNo;i++)
+        {
+            cin >> arr[i];
+        }
+    //int arr[] = {2, 3, 7};
+    //int m = sizeof(arr)/sizeof(arr[0]);
+    cout << "total way: " << count(arr, coinNo, amount) ;
 
     return 0;
 }
